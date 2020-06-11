@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"aki.ink","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="来源于google，baidu搜索 任何页面按(shift + &#x2F;)都会出现快捷键列表 watch———-当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动,你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件 star———–类似书签,方便你在star列表中找到,有’tag’可以分类 fork———–相当于你自己">
+  <meta name="description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Github初体验">
-<meta property="og:url" content="https://aki.ink/2016/06/07/github/index.html">
+<meta property="og:title" content="Git Help Document">
+<meta property="og:url" content="https://aki.ink/2017/01/git/index.html">
 <meta property="og:site_name" content="Aki&#39;s Blog">
-<meta property="og:description" content="来源于google，baidu搜索 任何页面按(shift + &#x2F;)都会出现快捷键列表 watch———-当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动,你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件 star———–类似书签,方便你在star列表中找到,有’tag’可以分类 fork———–相当于你自己">
+<meta property="og:description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2016-06-07T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-06-07T13:05:02.392Z">
+<meta property="article:published_time" content="2017-01-07T18:05:49.000Z">
+<meta property="article:modified_time" content="2020-06-11T15:46:04.008Z">
 <meta property="article:author" content="Li Junqiu">
 <meta property="article:tag" content="help">
-<meta property="article:tag" content="github">
+<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://aki.ink/2016/06/07/github/">
+<link rel="canonical" href="https://aki.ink/2017/01/git/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Github初体验 | Aki's Blog</title>
+  <title>Git Help Document | Aki's Blog</title>
   
 
 
@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://aki.ink/2016/06/07/github/">
+    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/01/git/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://mbi.yume.ink/config/IMG_7638.JPG">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Github初体验
+          Git Help Document
         </h1>
 
         <div class="post-meta">
@@ -190,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2016-06-07 18:05:49" itemprop="dateCreated datePublished" datetime="2016-06-07T18:05:49+00:00">2016-06-07</time>
+              <time title="创建时间：2017-01-07 18:05:49" itemprop="dateCreated datePublished" datetime="2017-01-07T18:05:49+00:00">2017-01-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-07 13:05:02" itemprop="dateModified" datetime="2020-06-07T13:05:02+00:00">2020-06-07</time>
+                <time title="修改时间：2020-06-11 15:46:04" itemprop="dateModified" datetime="2020-06-11T15:46:04+00:00">2020-06-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,6 +210,7 @@
             </span>
 
           
+            <div class="post-description">自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案</div>
 
         </div>
       </header>
@@ -220,20 +221,54 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><em>来源于google，baidu搜索</em></p>
-<h4 id="任何页面按-shift-都会出现快捷键列表"><a href="#任何页面按-shift-都会出现快捷键列表" class="headerlink" title="任何页面按(shift + /)都会出现快捷键列表"></a>任何页面按(shift + /)都会出现快捷键列表</h4><ul>
-<li>watch———-当你选择Watching，表示你以后会关注这个项目的所有动态，以后只要这个项目发生变动,你都会在自己的个人通知中心，收到一条通知消息，如果你设置了个人邮箱，那么你的邮箱也可能收到相应的邮件</li>
-<li>star———–类似书签,方便你在star列表中找到,有’tag’可以分类</li>
-<li>fork———–相当于你自己有了一份别人原项目的拷贝，自己可以修改，可以pull request</li>
-<li>关于<a href="http://www.jianshu.com/p/6c366b53ea41" target="_blank" rel="noopener">watch star fork</a>更详细的连接地址*</li>
-<li>Issues———<strong>事务卡片</strong>，类似于TODO list，可以用来报bug，提新需求，据说还能写书，功能还有很多。<br><a href="http://book.haoduoshipin.com/gitbeijing/issues.html" target="_blank" rel="noopener">参考</a></li>
-<li>Wiki———–<strong>项目的知识库</strong>， <a href="http://www.360doc.com/content/14/0514/12/14416931_377498145.shtml" target="_blank" rel="noopener">在GitHub上搭建自己的Wiki介绍</a></li>
-<li>Gist———–可以用来记录代码片段</li>
-<li>Pulse———–显示该仓库的活跃信息</li>
-<li>Graphs———-以图表形式显示改仓库的各项指标。用户可以轻松了解</li>
-<li>Settings——–这里可以更改当前仓库的设置。（删除仓库就在这里边）</li>
+        <p><em>参考《GitHub入门与实践》-大塚弘记著</em></p>
+<h2 id="一-配置"><a href="#一-配置" class="headerlink" title="一. 配置"></a>一. 配置</h2><p>如果第一次使用git，需要设置署名和邮箱<br><code>git config --global user.name &quot;username&quot;</code><br><code>git config --global user.email &quot;your email&quot;</code>   </p>
+<p>新建sshkey，省略ssh的使用  <code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></p>
+<h2 id="二-基础指令"><a href="#二-基础指令" class="headerlink" title="二. 基础指令"></a>二. 基础指令</h2><p>克隆github上的仓库   <code>git clone git@github.com:vagabondize/Hello-World.git</code> </p>
+<p>获取远程仓库的更新 <code>git pull</code></p>
+<p>查看仓库上的更新状况 <code>git status</code>  </p>
+<p>向暂存区中添加文件helloworld.php <code>git add helloworld.php</code> </p>
+<p>添加本地所有改变的状态 <code>git add .</code></p>
+<p>删除github中的文件夹，本地保留 <code>git rm -r --cached some-directory</code>  </p>
+<p>保存仓库的历史记录, 引号里是提交信息，是对这次提交的一个概述 <code>git commit -m &quot;add hello-world by php&quot;</code>    </p>
+<p>推送到远程仓库中 <code>git push</code>                            </p>
+<p>接下来的三行可以让你git push的时候无需输入github的用户名和密码<br><code>git remote rm origin</code><br><code>git remote add origin git@github.com:(your github name)/(your repository name)</code><br><code>git push -u origin master</code>  </p>
+<p>查看日志 <code>git log</code>   </p>
+<p>git log 后面加上目录名，便会只显示该目录下日志,加上 -p 就会显示文件前后的差别 <code>git log -p README.md</code></p>
+<p>查看当前工作树与暂存区的区别 <code>git diff</code>  </p>
+<h2 id="三-分支操作"><a href="#三-分支操作" class="headerlink" title="三. 分支操作"></a>三. 分支操作</h2><p>创建分支feature-A <code>git branch feature-A</code>  </p>
+<p>把当前操作切换到分支feature-A下 <code>git checkout feature-A</code>     </p>
+<p>查看分支 <code>git branch</code>   </p>
+<p>下面是合并分区，注意：要在分支feature-A中执行 <code>git merge --no--ff feature-A</code></p>
+<p>以图表形式查看分支 <code>git log --graph</code>    </p>
+<p>设置为本地仓库的远程仓库 <code>git remote add origin git@....</code>   </p>
+<h2 id="四-其他功能"><a href="#四-其他功能" class="headerlink" title="四. 其他功能"></a>四. 其他功能</h2><h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p><a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">官方参考文档</a></p>
+<p>将修改的代码暂存 <code>git stash</code></p>
+<p>查看有哪些暂存代码 <code>git stash list</code></p>
+<p>取最新的暂存区代码 <code>git stash apply</code>, 或者自己指定暂存区代码 <code>git stash apply stash@{2}</code></p>
+<p>移除暂存区 <code>git stash drop stash@{0}</code></p>
+<p>可以使用 <code>git stash pop</code> 来取代码，同时立刻将其从暂存中移走</p>
+<h2 id="五-场景模拟"><a href="#五-场景模拟" class="headerlink" title="五. 场景模拟"></a>五. 场景模拟</h2><p><em>不考虑存在冲突的情况，遇到冲突自行处理</em></p>
+<h3 id="删除远程服务器文件同时保留本地文件"><a href="#删除远程服务器文件同时保留本地文件" class="headerlink" title="删除远程服务器文件同时保留本地文件"></a>删除远程服务器文件同时保留本地文件</h3><ul>
+<li>git rm –cached filename / -r directory</li>
+<li>git commit -m “xxx”</li>
+<li>git push</li>
 </ul>
-
+<h3 id="暂存代码"><a href="#暂存代码" class="headerlink" title="暂存代码"></a>暂存代码</h3><p><strong>自己正在写新代码，突然有个500bug需要处理提交；总之就是，代码写了一半，需要暂存一下，解决如下</strong></p>
+<ol>
+<li>使用git的暂存区功能 <a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">stash</a></li>
+</ol>
+<p>使用 <code>git stash</code> 指令暂存代码，将自上次commit后修改的代码全部存储在暂存区，看上去没有修改</p>
+<p>想要将修改的代码取出来可以使用 <code>git stash apply</code> (原修改的代码还在暂存区)和 <code>git stash pop</code> (原修改的代码立即从暂存区移除)将代码取出</p>
+<p>取出后继续开发代码</p>
+<ol start="2">
+<li>使用git的rebase功能</li>
+</ol>
+<p>你可以就先commit代码，然后新切master分支解决bug提交，然后回来继续开发</p>
+<p>继续开发完成后commit代码，使用rebase功能将两次commit进行rebase, 合并为一个commit</p>
+<p><a href="https://www.jianshu.com/p/964de879904a" target="_blank" rel="noopener">点击参考博客</a></p>
+<h3 id="修改上一次commit-message"><a href="#修改上一次commit-message" class="headerlink" title="修改上一次commit message"></a>修改上一次commit message</h3><p><code>git commit --amend</code></p>
+<h3 id="撤销过去某次的commit"><a href="#撤销过去某次的commit" class="headerlink" title="撤销过去某次的commit"></a>撤销过去某次的commit</h3>
     </div>
 
     
@@ -243,7 +278,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/help/" rel="tag"># help</a>
-              <a href="/tags/github/" rel="tag"># github</a>
+              <a href="/tags/git/" rel="tag"># git</a>
           </div>
 
         
@@ -251,10 +286,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2017/01/07/git/" rel="next" title="Git Help Document">
-      Git Help Document <i class="fa fa-chevron-right"></i>
+    <a href="/2016/06/github/" rel="prev" title="Github初体验">
+      <i class="fa fa-chevron-left"></i> Github初体验
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/04/docker/" rel="next" title="docker初体验">
+      docker初体验 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -314,7 +352,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#任何页面按-shift-都会出现快捷键列表"><span class="nav-text">任何页面按(shift + &#x2F;)都会出现快捷键列表</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-配置"><span class="nav-text">一. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-基础指令"><span class="nav-text">二. 基础指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-分支操作"><span class="nav-text">三. 分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-其他功能"><span class="nav-text">四. 其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-text">git stash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-场景模拟"><span class="nav-text">五. 场景模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程服务器文件同时保留本地文件"><span class="nav-text">删除远程服务器文件同时保留本地文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存代码"><span class="nav-text">暂存代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改上一次commit-message"><span class="nav-text">修改上一次commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销过去某次的commit"><span class="nav-text">撤销过去某次的commit</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -362,11 +400,17 @@
 
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
+      友情链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://miki.red/" title="https:&#x2F;&#x2F;miki.red" rel="noopener" target="_blank">Miki</a>
+          <a href="https://miki.red/" title="https:&#x2F;&#x2F;miki.red" rel="noopener" target="_blank">Miki's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://高婷.我爱你/" title="https:&#x2F;&#x2F;高婷.我爱你" rel="noopener" target="_blank">show my love</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://resume.aki.ink/" title="https:&#x2F;&#x2F;resume.aki.ink" rel="noopener" target="_blank">My resume</a>
         </li>
     </ul>
   </div>

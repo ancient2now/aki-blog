@@ -20,21 +20,21 @@
     var CONFIG = {"hostname":"aki.ink","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="一. docker的主要目标通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。 二. docker容器虚拟化的优点环境隔离更快速的交付部署更高效的资源利用更迁移扩展更简单的更新管理">
+  <meta name="description" content="爬虫基础scrapy-redis把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="docker初体验">
-<meta property="og:url" content="https://aki.ink/2017/04/01/docker/index.html">
+<meta property="og:title" content="分布式爬虫">
+<meta property="og:url" content="https://aki.ink/2018/06/spider/index.html">
 <meta property="og:site_name" content="Aki&#39;s Blog">
-<meta property="og:description" content="一. docker的主要目标通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。 二. docker容器虚拟化的优点环境隔离更快速的交付部署更高效的资源利用更迁移扩展更简单的更新管理">
+<meta property="og:description" content="爬虫基础scrapy-redis把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2017-04-01T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-06-07T13:05:02.392Z">
+<meta property="article:published_time" content="2018-06-07T18:05:49.000Z">
+<meta property="article:modified_time" content="2020-06-11T15:46:04.008Z">
 <meta property="article:author" content="Li Junqiu">
-<meta property="article:tag" content="docker">
 <meta property="article:tag" content="help">
+<meta property="article:tag" content="spider">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://aki.ink/2017/04/01/docker/">
+<link rel="canonical" href="https://aki.ink/2018/06/spider/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>docker初体验 | Aki's Blog</title>
+  <title>分布式爬虫 | Aki's Blog</title>
   
 
 
@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/04/01/docker/">
+    <link itemprop="mainEntityOfPage" href="https://aki.ink/2018/06/spider/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://mbi.yume.ink/config/IMG_7638.JPG">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          docker初体验
+          分布式爬虫
         </h1>
 
         <div class="post-meta">
@@ -190,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2017-04-01 18:05:49" itemprop="dateCreated datePublished" datetime="2017-04-01T18:05:49+00:00">2017-04-01</time>
+              <time title="创建时间：2018-06-07 18:05:49" itemprop="dateCreated datePublished" datetime="2018-06-07T18:05:49+00:00">2018-06-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-07 13:05:02" itemprop="dateModified" datetime="2020-06-07T13:05:02+00:00">2020-06-07</time>
+                <time title="修改时间：2020-06-11 15:46:04" itemprop="dateModified" datetime="2020-06-11T15:46:04+00:00">2020-06-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -220,76 +220,31 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="一-docker的主要目标"><a href="#一-docker的主要目标" class="headerlink" title="一. docker的主要目标"></a>一. docker的主要目标</h2><p>通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。</p>
-<h2 id="二-docker容器虚拟化的优点"><a href="#二-docker容器虚拟化的优点" class="headerlink" title="二. docker容器虚拟化的优点"></a>二. docker容器虚拟化的优点</h2><p>环境隔离<br>更快速的交付部署<br>更高效的资源利用<br>更迁移扩展<br>更简单的更新管理</p>
+        <h2 id="爬虫基础"><a href="#爬虫基础" class="headerlink" title="爬虫基础"></a>爬虫基础</h2><h3 id="scrapy-redis"><a href="#scrapy-redis" class="headerlink" title="scrapy-redis"></a>scrapy-redis</h3><p>把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。</p>
 <a id="more"></a>
 
-<p><code>docker build -t=&quot;vagabondize/test&quot;</code><br><code>docker rmi vagabondize/test</code><br><code>docker run --name test1 vagabondize/test</code></p>
-<h2 id="三-docker镜像"><a href="#三-docker镜像" class="headerlink" title="三. docker镜像"></a>三. docker镜像</h2><p>镜像是一个只读的模板  </p>
-<p><code>docker inspect &lt;imageID&gt;</code><br><code>docker inspect -f &amp;#123;{.Os}&amp;#125; &lt;imageID&gt;</code></p>
-<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><ol>
-<li><p>基于原有容器创建新的镜像  </p>
-<p> <code>docker run -ti ubuntu bash</code></p>
-<p> <code>docker commit -a &quot;vagabondize&quot; -m &quot;message&quot; &lt;containerID&gt; vagabondize/test</code></p>
-</li>
-<li><p>迁出，载入镜像</p>
-<p> <code>docker save -o test.tar &lt;imageID&gt;</code></p>
-<p> <code>docker load --input test.tar</code></p>
-<p> <code>docker tag &lt;imageid&gt; &quot;vagabondize/test&quot;</code></p>
-<p> <code>docker push &lt;域名&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code></p>
-</li>
-<li><p>删除镜像</p>
-<p> <code>docker rmi &lt;image_id&gt;</code></p>
-</li>
-</ol>
-<h2 id="四-docker容器"><a href="#四-docker容器" class="headerlink" title="四. docker容器"></a>四. docker容器</h2><p>容器是从镜像创建的运行实例，每个容器都是相互隔离的  </p>
-<h3 id="1-创建容器"><a href="#1-创建容器" class="headerlink" title="1. 创建容器"></a>1. 创建容器</h3><p>1) create只创建</p>
-<pre><code>`docker create --name test_create -ti ubuntu`</code></pre><p>2) run 创建并运行（create + start）</p>
-<h3 id="2-使用容器"><a href="#2-使用容器" class="headerlink" title="2. 使用容器"></a>2. 使用容器</h3><ol>
-<li><p>进入容器</p>
-<p>启动时使用bash <code>docker run -i -t ubuntu /bin/bash</code> </p>
-<p>进入已启动容器的内部 <code>docker exec -i -t &lt;container_id&gt; bash</code></p>
-</li>
-<li><p>守护台运行</p>
-<p> 后台启动容器 <code>docker run -d ubuntu /bin/sh -C &quot;while true;do echo hello world; sleep 1; done&quot;</code></p>
-<p> 查看容器日志 <code>docker logs -f &lt;container_id&gt;</code></p>
-<p> 终止容器 <code>docker stop &lt;container_id&gt;</code></p>
-</li>
-<li><p>查看容器 </p>
-<p> 查看终止的容器：<code>docker ps -a</code></p>
-<p> 查看运行的容器：<code>docker ps</code>  </p>
-</li>
-<li><p>删除容器</p>
-<p> <code>docker rm &lt;container_id&gt;</code></p>
-<p> <code>docker rm -f &lt;container_id&gt;</code></p>
-</li>
-<li><p>导入和导出容器</p>
-<p> <code>docker export &lt;container_id&gt; &gt; test.tar</code></p>
-<p>  <code>cat test.tar | docker import - vagabondize/hello:test</code></p>
-</li>
-</ol>
-<h2 id="五-docker仓库"><a href="#五-docker仓库" class="headerlink" title="五. docker仓库"></a>五. docker仓库</h2><ol>
-<li><p>私有仓库</p>
-<p> registry </p>
-</li>
-<li><p>管理私有仓库</p>
-<p> docker-registry-ui</p>
-</li>
-</ol>
-<h2 id="六-数据卷"><a href="#六-数据卷" class="headerlink" title="六. 数据卷"></a>六. 数据卷</h2><p> -v 标记创建一个数据卷，映射目录</p>
-<p> <code>docker run -d --name app1 -it -v ${PWD}/webapp:/root/webapp ubuntu bash</code></p>
-<p> :ro 只读   默认:rw</p>
-<p> <code>docker run -d --name atest -v /root/test -ti ubuntu bash</code></p>
-<p> <code>docker run -d --name btest --volumes-from atest -ti ubuntu bash</code></p>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p><code>docker run -d --name dbdata -v /dbdata -ti ubuntu bash</code></p>
-<p><code>docker run --volumes-from dbdata -v ${PWD}:/backup --name worker ubuntu \ tar cvf /backup/backup.tar /dbdata</code></p>
-<p><code>docker run -d --name dbdata2 -v /dbdata -ti ubuntu bash</code></p>
-<p><code>docker run --volumes-from dbdata2 -v ${PWD}:/backup ubuntu / tar xvf /backup/bacup.tar</code></p>
-<h2 id="七-docker网络"><a href="#七-docker网络" class="headerlink" title="七. docker网络"></a>七. docker网络</h2><h1 id="centos"><a href="#centos" class="headerlink" title="centos"></a>centos</h1><p><code>sudo yum install net-tools</code>  </p>
-<p><code>sudo usermod -aG docker username</code></p>
-<p>配置信任仓库<br>/lib/systemd/system/docker.service  添加  –insecure-registry 192.168:5000<br><code>sudo systemctl daemon-reload</code><br><code>service docker restart</code>  </p>
-<p>添加加速器</p>
-<p>监听 netstat -nlp | grep 8080</p>
+<h3 id="Headers设置"><a href="#Headers设置" class="headerlink" title="Headers设置"></a>Headers设置</h3><ul>
+<li>User-Agent: 部分服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求</li>
+<li>Content-Type: 使用 REST 接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析</li>
+<li>application/xml: 在 XMl RPC, 如 RESTful/SOAP 调用时使用</li>
+<li>application/json: 在 JSON RPC 调用时使用</li>
+<li>application/x-www-form-urlencoded: 浏览器提交 Web 表单时使用</li>
+</ul>
+<h2 id="爬虫难点"><a href="#爬虫难点" class="headerlink" title="爬虫难点"></a>爬虫难点</h2><h3 id="反爬虫机制"><a href="#反爬虫机制" class="headerlink" title="反爬虫机制"></a>反爬虫机制</h3><p>A. 异常流量/高下载率 - 特别是时间内，从单一的短的客户端/或IP地址发送的请求。</p>
+<p>B. 在网站上重复执行的任务 - 基于假设是人类用户将无法一直执行相同的重复任务。</p>
+<p>C. 通过检测蜜罐 - 蜜罐通常是那些对于一个普通用户不可见，而只有爬虫可见的链接。当爬虫试图访问该链接时，警报就会触发。</p>
+<p><strong>针对这些反爬虫机制，可以通过以下策略来避开或者绕过这样的封锁:</strong></p>
+<h4 id="A-轮换IP地址"><a href="#A-轮换IP地址" class="headerlink" title="A. 轮换IP地址"></a>A. 轮换IP地址</h4><p>IP黑名单是可能的爬虫的最简单的方法。通过创建IP地址池，并使用不同的IP发出请求，将使服务器很难检测到爬虫。</p>
+<p>对策：<br>使用来自代理服务的IP列表，一定的时间间隔后随机挑选一个IP</p>
+<h4 id="B-轮换Cookie"><a href="#B-轮换Cookie" class="headerlink" title="B. 轮换Cookie"></a>B. 轮换Cookie</h4><p>Cookies是加密存储在客户端的数据，有的网站使用Cookie来标识用户。如果用户在客户端发送高频请求，有可能被认定为可疑爬虫，从而拒绝访问。</p>
+<p>对策：<br>自定义和管理cookie池<br>发送不包含cookie的请求到服务器，解析返回的包并设置cookie值; 它存储在cookie的收集器;<br>从cookie收集器中获取cookie，如果cookie不可用，则从cookie收集器中将其删除;<br>利用时间戳管理cookie收集器，这样是为了让爬虫每次首先获得的距离当前时间最远的cookie。<br>关闭Cookies<br>通过禁用cookie，可以帮助防止某些网站通过使用cookie来标识用户，从而导致爬虫被封禁。  </p>
+<h4 id="C-用户代理欺骗"><a href="#C-用户代理欺骗" class="headerlink" title="C. 用户代理欺骗"></a>C. 用户代理欺骗</h4><p>伪装成浏览器的方法之一是修改用户代理(User Agent)。用户代理是在请求Header中的字符串，它包含用户代理信息，例如网络浏览器，客户端，操作系统等的版本。</p>
+<p>对策：<br>通过用户代理的列表或者随机生成器，随机选择或生成对于每个请求的欺骗用户代理。设置为用户代理一个常见的网页浏览器，而不是使用默认的请求客户端。</p>
+<h4 id="D-限制速度"><a href="#D-限制速度" class="headerlink" title="D. 限制速度"></a>D. 限制速度</h4><p>降低抓取速度，善待网站，而不要让其不堪重负，或者DDoS攻击服务器。</p>
+<p>对策：<br>在每个请求之间的放入一些随机休眠时间<br>在抓取一定的网页数后，添加一些延迟<br>使用尽可能小的并发请求数目</p>
+<h4 id="E-避免重复性爬行模式"><a href="#E-避免重复性爬行模式" class="headerlink" title="E *避免重复性爬行模式"></a>E *避免重复性爬行模式</h4><p>有些网站实现智能防抓取机制，从而重复操作将有可能检测为爬虫。为了让爬虫看起来像一个人，加上随机点击，鼠标移动，随机行为等。使用自动化测试工具，如可模拟器正常的“人的行为”。</p>
+<h4 id="F-小心蜜罐"><a href="#F-小心蜜罐" class="headerlink" title="F *小心蜜罐"></a>F *小心蜜罐</h4><p>这些蜜罐（HoneyPot）通常是链接，普通用户无法看到，但爬虫则可以。他们有可能在CSS样式中显示“display: none”。因此，蜜罐的检测可能会非常棘手。</p>
+<p><em>以上”反反爬虫”策略也可阅读博文Anti Anti-spider Strategy</em></p>
 
     </div>
 
@@ -299,8 +254,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/docker/" rel="tag"># docker</a>
               <a href="/tags/help/" rel="tag"># help</a>
+              <a href="/tags/spider/" rel="tag"># spider</a>
           </div>
 
         
@@ -309,13 +264,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2017/01/07/git/" rel="prev" title="Git Help Document">
-      <i class="fa fa-chevron-left"></i> Git Help Document
+    <a href="/2017/06/docker-study-xunxu/" rel="prev" title="《循序渐进学Docker》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《循序渐进学Docker》读书笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2017/06/07/docker-study-xunxu/" rel="next" title="《循序渐进学Docker》读书笔记">
-      《循序渐进学Docker》读书笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -374,7 +326,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-docker的主要目标"><span class="nav-text">一. docker的主要目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-docker容器虚拟化的优点"><span class="nav-text">二. docker容器虚拟化的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-docker镜像"><span class="nav-text">三. docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建镜像"><span class="nav-text">创建镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-docker容器"><span class="nav-text">四. docker容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建容器"><span class="nav-text">1. 创建容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用容器"><span class="nav-text">2. 使用容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-docker仓库"><span class="nav-text">五. docker仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-数据卷"><span class="nav-text">六. 数据卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备份"><span class="nav-text">备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-docker网络"><span class="nav-text">七. docker网络</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#centos"><span class="nav-text">centos</span></a></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫基础"><span class="nav-text">爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy-redis"><span class="nav-text">scrapy-redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Headers设置"><span class="nav-text">Headers设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫难点"><span class="nav-text">爬虫难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反爬虫机制"><span class="nav-text">反爬虫机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-轮换IP地址"><span class="nav-text">A. 轮换IP地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-轮换Cookie"><span class="nav-text">B. 轮换Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-用户代理欺骗"><span class="nav-text">C. 用户代理欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D-限制速度"><span class="nav-text">D. 限制速度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-避免重复性爬行模式"><span class="nav-text">E *避免重复性爬行模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-小心蜜罐"><span class="nav-text">F *小心蜜罐</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -422,11 +374,17 @@
 
   <div class="links-of-blogroll motion-element">
     <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
-      Links
+      友情链接
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="https://miki.red/" title="https:&#x2F;&#x2F;miki.red" rel="noopener" target="_blank">Miki</a>
+          <a href="https://miki.red/" title="https:&#x2F;&#x2F;miki.red" rel="noopener" target="_blank">Miki's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://高婷.我爱你/" title="https:&#x2F;&#x2F;高婷.我爱你" rel="noopener" target="_blank">show my love</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://resume.aki.ink/" title="https:&#x2F;&#x2F;resume.aki.ink" rel="noopener" target="_blank">My resume</a>
         </li>
     </ul>
   </div>
