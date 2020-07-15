@@ -13,28 +13,28 @@
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"aki.ink","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
+  <meta name="description" content="看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git Help Document">
-<meta property="og:url" content="https://aki.ink/2017/01/git/index.html">
+<meta property="og:title" content="《循序渐进学Docker》读书笔记">
+<meta property="og:url" content="https://aki.ink/2017/06/help/docker-study-xunxu/index.html">
 <meta property="og:site_name" content="Aki&#39;s Blog">
-<meta property="og:description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
+<meta property="og:description" content="看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2017-01-07T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-06-12T10:34:00.156Z">
+<meta property="article:published_time" content="2017-06-07T18:05:49.000Z">
+<meta property="article:modified_time" content="2020-07-15T17:06:18.785Z">
 <meta property="article:author" content="Li Junqiu">
+<meta property="article:tag" content="docker">
 <meta property="article:tag" content="help">
-<meta property="article:tag" content="git">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://aki.ink/2017/01/git/">
+<link rel="canonical" href="https://aki.ink/2017/06/help/docker-study-xunxu/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Git Help Document | Aki's Blog</title>
+  <title>《循序渐进学Docker》读书笔记 | Aki's Blog</title>
   
 
 
@@ -167,7 +167,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/01/git/">
+    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/06/help/docker-study-xunxu/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://mbi.yume.ink/config/IMG_7638.JPG">
@@ -180,7 +180,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git Help Document
+          《循序渐进学Docker》读书笔记
         </h1>
 
         <div class="post-meta">
@@ -190,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2017-01-07 18:05:49" itemprop="dateCreated datePublished" datetime="2017-01-07T18:05:49+00:00">2017-01-07</time>
+              <time title="创建时间：2017-06-07 18:05:49" itemprop="dateCreated datePublished" datetime="2017-06-07T18:05:49+00:00">2017-06-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-12 10:34:00" itemprop="dateModified" datetime="2020-06-12T10:34:00+00:00">2020-06-12</time>
+                <time title="修改时间：2020-07-15 17:06:18" itemprop="dateModified" datetime="2020-07-15T17:06:18+00:00">2020-07-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -210,7 +210,7 @@
             </span>
 
           
-            <div class="post-description">自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案</div>
+            <div class="post-description">看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅</div>
 
         </div>
       </header>
@@ -221,54 +221,65 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><em>参考《GitHub入门与实践》-大塚弘记著</em></p>
-<h2 id="一-配置"><a href="#一-配置" class="headerlink" title="一. 配置"></a>一. 配置</h2><p>如果第一次使用git，需要设置署名和邮箱<br><code>git config --global user.name &quot;username&quot;</code><br><code>git config --global user.email &quot;your email&quot;</code>   </p>
-<p>新建sshkey，省略ssh的使用  <code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></p>
-<h2 id="二-基础指令"><a href="#二-基础指令" class="headerlink" title="二. 基础指令"></a>二. 基础指令</h2><p>克隆github上的仓库   <code>git clone git@github.com:vagabondize/Hello-World.git</code> </p>
-<p>获取远程仓库的更新 <code>git pull</code></p>
-<p>查看仓库上的更新状况 <code>git status</code>  </p>
-<p>向暂存区中添加文件helloworld.php <code>git add helloworld.php</code> </p>
-<p>添加本地所有改变的状态 <code>git add .</code></p>
-<p>删除github中的文件夹，本地保留 <code>git rm -r --cached some-directory</code>  </p>
-<p>保存仓库的历史记录, 引号里是提交信息，是对这次提交的一个概述 <code>git commit -m &quot;add hello-world by php&quot;</code>    </p>
-<p>推送到远程仓库中 <code>git push</code>                            </p>
-<p>接下来的三行可以让你git push的时候无需输入github的用户名和密码<br><code>git remote rm origin</code><br><code>git remote add origin git@github.com:(your github name)/(your repository name)</code><br><code>git push -u origin master</code>  </p>
-<p>查看日志 <code>git log</code>   </p>
-<p>git log 后面加上目录名，便会只显示该目录下日志,加上 -p 就会显示文件前后的差别 <code>git log -p README.md</code></p>
-<p>查看当前工作树与暂存区的区别 <code>git diff</code>  </p>
-<h2 id="三-分支操作"><a href="#三-分支操作" class="headerlink" title="三. 分支操作"></a>三. 分支操作</h2><p>创建分支feature-A <code>git branch feature-A</code>  </p>
-<p>把当前操作切换到分支feature-A下 <code>git checkout feature-A</code>     </p>
-<p>查看分支 <code>git branch</code>   </p>
-<p>下面是合并分区，注意：要在分支feature-A中执行 <code>git merge --no--ff feature-A</code></p>
-<p>以图表形式查看分支 <code>git log --graph</code>    </p>
-<p>设置为本地仓库的远程仓库 <code>git remote add origin git@....</code>   </p>
-<h2 id="四-其他功能"><a href="#四-其他功能" class="headerlink" title="四. 其他功能"></a>四. 其他功能</h2><h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p><a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">官方参考文档</a></p>
-<p>将修改的代码暂存 <code>git stash</code></p>
-<p>查看有哪些暂存代码 <code>git stash list</code></p>
-<p>取最新的暂存区代码 <code>git stash apply</code>, 或者自己指定暂存区代码 <code>git stash apply stash@{2}</code></p>
-<p>移除暂存区 <code>git stash drop stash@{0}</code></p>
-<p>可以使用 <code>git stash pop</code> 来取代码，同时立刻将其从暂存中移走</p>
-<h2 id="五-场景模拟"><a href="#五-场景模拟" class="headerlink" title="五. 场景模拟"></a>五. 场景模拟</h2><p><em>不考虑存在冲突的情况，遇到冲突自行处理</em></p>
-<h3 id="删除远程服务器文件同时保留本地文件"><a href="#删除远程服务器文件同时保留本地文件" class="headerlink" title="删除远程服务器文件同时保留本地文件"></a>删除远程服务器文件同时保留本地文件</h3><ul>
-<li>git rm –cached filename / -r directory</li>
-<li>git commit -m “xxx”</li>
-<li>git push</li>
+        <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><ul>
+<li><p>sudo apt-get update</p>
+</li>
+<li><p>sudo apt-get intall docker.io</p>
+</li>
+<li><p>sudo service docker start</p>
+</li>
+<li><p>检查Docker安装是否成功<code>sudo docker run hello-world</code></p>
+</li>
 </ul>
-<h3 id="暂存代码"><a href="#暂存代码" class="headerlink" title="暂存代码"></a>暂存代码</h3><p><strong>自己正在写新代码，突然有个500bug需要处理提交；总之就是，代码写了一半，需要暂存一下，解决如下</strong></p>
-<ol>
-<li>使用git的暂存区功能 <a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">stash</a></li>
+<h2 id="sudo权限"><a href="#sudo权限" class="headerlink" title="sudo权限"></a>sudo权限</h2><ul>
+<li>sudo usermod -aG docker username</li>
+</ul>
+<h2 id="搭建WordPress个人博客"><a href="#搭建WordPress个人博客" class="headerlink" title="搭建WordPress个人博客"></a>搭建WordPress个人博客</h2><ul>
+<li>docker run –name db –env MYSQL_ROOT_PASSWORD=example -d mariadb</li>
+<li>docker run –name MyWordPress –link db:mysql -p 8080:80 -d wordpress</li>
+</ul>
+<h2 id="搭建gitlab服务"><a href="#搭建gitlab服务" class="headerlink" title="搭建gitlab服务"></a>搭建gitlab服务</h2><h4 id="https-github-com-sameersbn-docker-gitlab"><a href="#https-github-com-sameersbn-docker-gitlab" class="headerlink" title="https://github.com/sameersbn/docker-gitlab"></a><a href="https://github.com/sameersbn/docker-gitlab" target="_blank" rel="noopener">https://github.com/sameersbn/docker-gitlab</a></h4><ol>
+<li>启动postgresql<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker </span><span class="string">run </span><span class="built_in">--name</span> <span class="string">gitlab-postgresql </span>-d \</span><br><span class="line">    <span class="built_in">--env</span> <span class="string">'DB_NAME=gitlabhq_production'</span> \</span><br><span class="line">    <span class="built_in">--env</span> <span class="string">'DB_USER=gitlab'</span> <span class="built_in">--env</span> <span class="string">'DB_PASS=password'</span> \</span><br><span class="line">    <span class="string">sameersbn/</span><span class="string">postgresql:9.</span><span class="string">4-12</span></span><br></pre></td></tr></table></figure></li>
+<li>启动redis<code>docker run --name gitlab-redis -d sameersbn/redis:latest</code></li>
+<li>启动gitlab<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">docker </span><span class="string">run </span><span class="built_in">--name</span> <span class="string">gitlab </span>-d \</span><br><span class="line">    <span class="built_in">--link</span> <span class="string">gitlab-postgresql:postgresql </span><span class="built_in">--link</span> <span class="string">gitlab-redis:redis.</span><span class="string">io </span>\</span><br><span class="line">    <span class="built_in">--publish</span> <span class="string">10022:22 </span><span class="built_in">--publish</span> <span class="string">10080:80 </span>\</span><br><span class="line">    <span class="built_in">--env</span> <span class="string">'GITLAB_PORT=10080'</span> <span class="built_in">--env</span> <span class="string">'GITLAB_SSH_PORT=10022'</span> \</span><br><span class="line">    <span class="built_in">--env</span> <span class="string">'GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string'</span> \</span><br><span class="line">        <span class="string">sameersbn/</span><span class="string">gitlab:8.</span>4.4</span><br></pre></td></tr></table></figure>
+
+</li>
 </ol>
-<p>使用 <code>git stash</code> 指令暂存代码，将自上次commit后修改的代码全部存储在暂存区，看上去没有修改</p>
-<p>想要将修改的代码取出来可以使用 <code>git stash apply</code> (原修改的代码还在暂存区)和 <code>git stash pop</code> (原修改的代码立即从暂存区移除)将代码取出</p>
-<p>取出后继续开发代码</p>
-<ol start="2">
-<li>使用git的rebase功能</li>
+<h2 id="docker基础"><a href="#docker基础" class="headerlink" title="docker基础"></a>docker基础</h2><ol>
+<li><strong>查询镜像</strong> <code>docker search &lt;string&gt;</code></li>
+<li><strong>下载镜像</strong> <code>docker pull learn/turorial</code> 记得使用全名</li>
+<li><strong>创建并启动容器</strong> <code>docker run learn/turorial echo &quot;hello world&quot;</code></li>
+<li><strong>修改容器</strong> <code>docker run learn/tutorial apt-get install -y ping</code> 在非交互模式下安装软件包，要使用 -y</li>
+<li><strong>创建新镜像</strong>,使用 <code>docker ps -l</code> 找到安装过ping包的容器的ID号，然后把这个容器提交为新镜像。<br>使用 <code>docker commit &lt;ID&gt; learn/ping</code> 把容器提交为新镜像</li>
+<li><strong>使用新镜像</strong> <code>docker run learn/ping ping www.docker.com</code></li>
+<li><strong>查询容器信息</strong>，使用 <code>docker ps</code> 能够查询本机上所有正在运行的容器，使用 <code>docker inspect &lt;ID&gt;</code> 可以看到单个容器详细信息，使用容器ID的前3~4个字符来指定</li>
+<li><strong>把新镜像上传仓库</strong>，先执行 <code>docker images</code> 查看本机的镜像列表，执行 <code>docker push learn/ping</code> 把镜像推送到Docker官方仓库</li>
 </ol>
-<p>你可以就先commit代码，然后新切master分支解决bug提交，然后回来继续开发</p>
-<p>继续开发完成后commit代码，使用rebase功能将两次commit进行rebase, 合并为一个commit</p>
-<p><a href="https://www.jianshu.com/p/964de879904a" target="_blank" rel="noopener">点击参考博客</a></p>
-<h3 id="修改上一次commit-message"><a href="#修改上一次commit-message" class="headerlink" title="修改上一次commit message"></a>修改上一次commit message</h3><p><code>git commit --amend</code></p>
-<h3 id="撤销过去某次的commit"><a href="#撤销过去某次的commit" class="headerlink" title="撤销过去某次的commit"></a>撤销过去某次的commit</h3>
+<h2 id="Docker容器管理"><a href="#Docker容器管理" class="headerlink" title="Docker容器管理"></a>Docker容器管理</h2><h4 id="单一容器管理"><a href="#单一容器管理" class="headerlink" title="单一容器管理"></a>单一容器管理</h4><ul>
+<li>查询完整的CONTAINER ID <code>docker ps --no-trunc</code></li>
+<li>通过CONTAINER ID查询容器的状态 <code>docker ps -a | grep 0ee2433coi</code></li>
+<li>停止容器 <code>docker stop 009oljo902</code></li>
+<li>启动容器 <code>docker start 0u0ljou0j</code></li>
+<li>创建容器时，使用 –name 参数给容器起一个别名</li>
+<li>使用 <code>docker inspect -f &amp;#123;{.State.Startus}&amp;#125; MyWordPress</code> 提取信息</li>
+<li>使用 <code>docker logs</code> 查询日志 </li>
+<li>Docker提供了原生的方式支持登入容器 <strong>docker exec</strong>，使用形式 <code>docker exec+容器名 + 容器执行的命令</code><br>例子：<code>docker exec MyWordPress ps aux</code><br>如果希望执行多个命令，使用 <code>docker exec -it MyWordPress /bin/bash</code> 相当于以root身份登入容器</li>
+<li>删除容器 <code>docker rm MyWordPress db</code></li>
+</ul>
+<h4 id="多容器管理"><a href="#多容器管理" class="headerlink" title="多容器管理"></a>多容器管理</h4><ul>
+<li>Docker提供一个容器编排工具——Docker Compose,根据配置模板中的“–link”等参数，对启动的优先级自动排序，执行 <code>docker-compose up</code> 就可以把同一个服务中的多个容器依次创建和启动<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">wordpress</span>: </span><br><span class="line">    <span class="attribute">image</span>: wordpass</span><br><span class="line">    <span class="attribute">links</span>: </span><br><span class="line">        - <span class="attribute">db</span>:mysql</span><br><span class="line">    <span class="attribute">ports</span>: </span><br><span class="line">        - <span class="number">8080</span>:<span class="number">80</span></span><br><span class="line"><span class="attribute">db</span>:</span><br><span class="line">    <span class="attribute">image</span>: mariadb</span><br><span class="line">    <span class="attribute">enviroment</span>: </span><br><span class="line">        <span class="attribute">MYSQL_ROOT_PASSWORD</span>: example</span><br></pre></td></tr></table></figure></li>
+<li>启动 <code>docker-compose start</code></li>
+<li>停止 <code>docker-compose stop</code></li>
+</ul>
+<h2 id="Docker镜像管理"><a href="#Docker镜像管理" class="headerlink" title="Docker镜像管理"></a>Docker镜像管理</h2><h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><ul>
+<li><code>docker build -t image_redis:v1.0</code> -t用来取名字</li>
+</ul>
+<h2 id="Docker仓库管理"><a href="#Docker仓库管理" class="headerlink" title="Docker仓库管理"></a>Docker仓库管理</h2><ul>
+<li><code>docker login</code></li>
+<li><code>docker push ubuntu-baseimage:1.0</code></li>
+<li><code>docker pull centos</code></li>
+</ul>
+
     </div>
 
     
@@ -283,7 +294,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aki.ink/2017/01/git/" title="Git Help Document">https://aki.ink/2017/01/git/</a>
+    <a href="https://aki.ink/2017/06/help/docker-study-xunxu/" title="《循序渐进学Docker》读书笔记">https://aki.ink/2017/06/help/docker-study-xunxu/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -294,8 +305,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/docker/" rel="tag"># docker</a>
               <a href="/tags/help/" rel="tag"># help</a>
-              <a href="/tags/git/" rel="tag"># git</a>
           </div>
 
         <div>
@@ -312,12 +323,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2016/06/github/" rel="prev" title="Github初体验">
-      <i class="fa fa-chevron-left"></i> Github初体验
+    <a href="/2017/04/help/docker/" rel="prev" title="docker初体验">
+      <i class="fa fa-chevron-left"></i> docker初体验
     </a></div>
       <div class="post-nav-item">
-    <a href="/2017/04/docker/" rel="next" title="docker初体验">
-      docker初体验 <i class="fa fa-chevron-right"></i>
+    <a href="/2018/06/help/spider/" rel="next" title="分布式爬虫">
+      分布式爬虫 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -377,7 +388,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-配置"><span class="nav-text">一. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-基础指令"><span class="nav-text">二. 基础指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-分支操作"><span class="nav-text">三. 分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-其他功能"><span class="nav-text">四. 其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-text">git stash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-场景模拟"><span class="nav-text">五. 场景模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程服务器文件同时保留本地文件"><span class="nav-text">删除远程服务器文件同时保留本地文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存代码"><span class="nav-text">暂存代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改上一次commit-message"><span class="nav-text">修改上一次commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销过去某次的commit"><span class="nav-text">撤销过去某次的commit</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-text">install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo权限"><span class="nav-text">sudo权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建WordPress个人博客"><span class="nav-text">搭建WordPress个人博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建gitlab服务"><span class="nav-text">搭建gitlab服务</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#https-github-com-sameersbn-docker-gitlab"><span class="nav-text">https:&#x2F;&#x2F;github.com&#x2F;sameersbn&#x2F;docker-gitlab</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker基础"><span class="nav-text">docker基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker容器管理"><span class="nav-text">Docker容器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#单一容器管理"><span class="nav-text">单一容器管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多容器管理"><span class="nav-text">多容器管理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker镜像管理"><span class="nav-text">Docker镜像管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker仓库管理"><span class="nav-text">Docker仓库管理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -395,20 +406,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -485,9 +496,9 @@
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
 
 <script src="/js/utils.js"></script>
 
