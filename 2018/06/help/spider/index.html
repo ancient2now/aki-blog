@@ -28,9 +28,8 @@
 <meta property="og:description" content="爬虫基础scrapy-redis把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-06-07T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-07-16T10:24:37.200Z">
+<meta property="article:modified_time" content="2020-07-19T02:17:50.544Z">
 <meta property="article:author" content="Li Junqiu">
-<meta property="article:tag" content="help">
 <meta property="article:tag" content="spider">
 <meta name="twitter:card" content="summary">
 
@@ -197,7 +196,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-16 10:24:37" itemprop="dateModified" datetime="2020-07-16T10:24:37+00:00">2020-07-16</time>
+                <time title="修改时间：2020-07-19 02:17:50" itemprop="dateModified" datetime="2020-07-19T02:17:50+00:00">2020-07-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -205,7 +204,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/help/" itemprop="url" rel="index"><span itemprop="name">help</span></a>
+                  <a href="/categories/Help/" itemprop="url" rel="index"><span itemprop="name">Help</span></a>
                 </span>
             </span>
 
@@ -239,12 +238,14 @@
 <h4 id="B-轮换Cookie"><a href="#B-轮换Cookie" class="headerlink" title="B. 轮换Cookie"></a>B. 轮换Cookie</h4><p>Cookies是加密存储在客户端的数据，有的网站使用Cookie来标识用户。如果用户在客户端发送高频请求，有可能被认定为可疑爬虫，从而拒绝访问。</p>
 <p>对策：<br>自定义和管理cookie池<br>发送不包含cookie的请求到服务器，解析返回的包并设置cookie值; 它存储在cookie的收集器;<br>从cookie收集器中获取cookie，如果cookie不可用，则从cookie收集器中将其删除;<br>利用时间戳管理cookie收集器，这样是为了让爬虫每次首先获得的距离当前时间最远的cookie。<br>关闭Cookies<br>通过禁用cookie，可以帮助防止某些网站通过使用cookie来标识用户，从而导致爬虫被封禁。  </p>
 <h4 id="C-用户代理欺骗"><a href="#C-用户代理欺骗" class="headerlink" title="C. 用户代理欺骗"></a>C. 用户代理欺骗</h4><p>伪装成浏览器的方法之一是修改用户代理(User Agent)。用户代理是在请求Header中的字符串，它包含用户代理信息，例如网络浏览器，客户端，操作系统等的版本。</p>
-<p>对策：<br>通过用户代理的列表或者随机生成器，随机选择或生成对于每个请求的欺骗用户代理。设置为用户代理一个常见的网页浏览器，而不是使用默认的请求客户端。</p>
+<p><strong>对策:</strong><br>通过用户代理的列表或者随机生成器，随机选择或生成对于每个请求的欺骗用户代理。设置为用户代理一个常见的网页浏览器，而不是使用默认的请求客户端。</p>
 <h4 id="D-限制速度"><a href="#D-限制速度" class="headerlink" title="D. 限制速度"></a>D. 限制速度</h4><p>降低抓取速度，善待网站，而不要让其不堪重负，或者DDoS攻击服务器。</p>
 <p>对策：<br>在每个请求之间的放入一些随机休眠时间<br>在抓取一定的网页数后，添加一些延迟<br>使用尽可能小的并发请求数目</p>
 <h4 id="E-避免重复性爬行模式"><a href="#E-避免重复性爬行模式" class="headerlink" title="E *避免重复性爬行模式"></a>E *避免重复性爬行模式</h4><p>有些网站实现智能防抓取机制，从而重复操作将有可能检测为爬虫。为了让爬虫看起来像一个人，加上随机点击，鼠标移动，随机行为等。使用自动化测试工具，如可模拟器正常的“人的行为”。</p>
 <h4 id="F-小心蜜罐"><a href="#F-小心蜜罐" class="headerlink" title="F *小心蜜罐"></a>F *小心蜜罐</h4><p>这些蜜罐（HoneyPot）通常是链接，普通用户无法看到，但爬虫则可以。他们有可能在CSS样式中显示“display: none”。因此，蜜罐的检测可能会非常棘手。</p>
-<p><em>以上”反反爬虫”策略也可阅读博文Anti Anti-spider Strategy</em></p>
+<blockquote>
+<p>以上”反反爬虫”策略也可阅读博文Anti Anti-spider Strategy</p>
+</blockquote>
 
     </div>
 
@@ -271,7 +272,6 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/help/" rel="tag"># help</a>
               <a href="/tags/spider/" rel="tag"># spider</a>
           </div>
 
