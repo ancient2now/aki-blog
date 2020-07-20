@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"aki.ink","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
+  <meta name="description" content="一. docker的主要目标通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。 二. docker容器虚拟化的优点环境隔离更快速的交付部署更高效的资源利用更迁移扩展更简单的更新管理">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git Help Document">
-<meta property="og:url" content="https://aki.ink/2017/01/HelpDocument/git/index.html">
+<meta property="og:title" content="docker初体验">
+<meta property="og:url" content="https://aki.ink/2017/04/Help-Document/docker/index.html">
 <meta property="og:site_name" content="Aki&#39;s Blog">
-<meta property="og:description" content="自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案">
+<meta property="og:description" content="一. docker的主要目标通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。 二. docker容器虚拟化的优点环境隔离更快速的交付部署更高效的资源利用更迁移扩展更简单的更新管理">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2017-01-07T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-07-20T01:27:27.295Z">
+<meta property="article:published_time" content="2017-04-01T18:05:49.000Z">
+<meta property="article:modified_time" content="2020-07-20T06:55:52.677Z">
 <meta property="article:author" content="Li Junqiu">
-<meta property="article:tag" content="git">
+<meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://aki.ink/2017/01/HelpDocument/git/">
+<link rel="canonical" href="https://aki.ink/2017/04/Help-Document/docker/">
 
 
 <script id="page-configurations">
@@ -46,10 +46,19 @@
   };
 </script>
 
-  <title>Git Help Document | Aki's Blog</title>
+  <title>docker初体验 | Aki's Blog</title>
   
 
 
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?1b1b4c07c3486b17d72642804f132fb4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 
 
 
@@ -166,7 +175,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/01/HelpDocument/git/">
+    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/04/Help-Document/docker/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://mbi.yume.ink/config/IMG_7638.JPG">
@@ -179,7 +188,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git Help Document
+          docker初体验
         </h1>
 
         <div class="post-meta">
@@ -189,14 +198,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2017-01-07 18:05:49" itemprop="dateCreated datePublished" datetime="2017-01-07T18:05:49+00:00">2017-01-07</time>
+              <time title="创建时间：2017-04-01 18:05:49" itemprop="dateCreated datePublished" datetime="2017-04-01T18:05:49+00:00">2017-04-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-20 01:27:27" itemprop="dateModified" datetime="2020-07-20T01:27:27+00:00">2020-07-20</time>
+                <time title="修改时间：2020-07-20 06:55:52" itemprop="dateModified" datetime="2020-07-20T06:55:52+00:00">2020-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -204,12 +213,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HelpDocument/" itemprop="url" rel="index"><span itemprop="name">HelpDocument</span></a>
+                  <a href="/categories/Help-Document/" itemprop="url" rel="index"><span itemprop="name">Help Document</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">自己记录了git的常用指令，由浅入深，以及记录了自己在实际使用中的一些场景的解决方案</div>
 
         </div>
       </header>
@@ -220,54 +228,77 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <blockquote>
-<p>参考《GitHub入门与实践》-大塚弘记著</p>
-</blockquote>
-<h2 id="一-配置"><a href="#一-配置" class="headerlink" title="一. 配置"></a>一. 配置</h2><p>如果第一次使用git，需要设置署名和邮箱<br><code>git config --global user.name &quot;username&quot;</code><br><code>git config --global user.email &quot;your email&quot;</code>  </p>
-<p>新建sshkey，省略ssh的使用  <code>ssh-keygen -t rsa -C &quot;youremail&quot;</code></p>
-<h2 id="二-基础指令"><a href="#二-基础指令" class="headerlink" title="二. 基础指令"></a>二. 基础指令</h2><p>克隆github上的仓库   <code>git clone git@github.com:vagabondize/Hello-World.git</code></p>
-<p>获取远程仓库的更新 <code>git pull</code></p>
-<p>查看仓库上的更新状况 <code>git status</code>  </p>
-<p>向暂存区中添加文件helloworld.php <code>git add helloworld.php</code></p>
-<p>添加本地所有改变的状态 <code>git add .</code></p>
-<p>删除github中的文件夹，本地保留 <code>git rm -r --cached some-directory</code>  </p>
-<p>保存仓库的历史记录, 引号里是提交信息，是对这次提交的一个概述 <code>git commit -m &quot;add hello-world by php&quot;</code></p>
-<p>推送到远程仓库中 <code>git push</code></p>
-<p>接下来的三行可以让你git push的时候无需输入github的用户名和密码<br><code>git remote rm origin</code><br><code>git remote add origin git@github.com:(your github name)/(your repository name)</code><br><code>git push -u origin master</code>  </p>
-<p>查看日志 <code>git log</code></p>
-<p>git log 后面加上目录名，便会只显示该目录下日志,加上 -p 就会显示文件前后的差别 <code>git log -p README.md</code></p>
-<p>查看当前工作树与暂存区的区别 <code>git diff</code>  </p>
-<h2 id="三-分支操作"><a href="#三-分支操作" class="headerlink" title="三. 分支操作"></a>三. 分支操作</h2><p>创建分支feature-A <code>git branch feature-A</code>  </p>
-<p>把当前操作切换到分支feature-A下 <code>git checkout feature-A</code></p>
-<p>查看分支 <code>git branch</code></p>
-<p>下面是合并分区，注意：要在分支feature-A中执行 <code>git merge --no--ff feature-A</code></p>
-<p>以图表形式查看分支 <code>git log --graph</code></p>
-<p>设置为本地仓库的远程仓库 <code>git remote add origin git@....</code></p>
-<h2 id="四-其他功能"><a href="#四-其他功能" class="headerlink" title="四. 其他功能"></a>四. 其他功能</h2><h3 id="git-stash"><a href="#git-stash" class="headerlink" title="git stash"></a>git stash</h3><p><a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">官方参考文档</a></p>
-<p>将修改的代码暂存 <code>git stash</code></p>
-<p>查看有哪些暂存代码 <code>git stash list</code></p>
-<p>取最新的暂存区代码 <code>git stash apply</code>, 或者自己指定暂存区代码 <code>git stash apply stash@{2}</code></p>
-<p>移除暂存区 <code>git stash drop stash@{0}</code></p>
-<p>可以使用 <code>git stash pop</code> 来取代码，同时立刻将其从暂存中移走</p>
-<h2 id="五-场景模拟"><a href="#五-场景模拟" class="headerlink" title="五. 场景模拟"></a>五. 场景模拟</h2><blockquote>
-<p>不考虑存在冲突的情况，遇到冲突自行处理</p>
-</blockquote>
-<h3 id="删除远程服务器文件同时保留本地文件"><a href="#删除远程服务器文件同时保留本地文件" class="headerlink" title="删除远程服务器文件同时保留本地文件"></a>删除远程服务器文件同时保留本地文件</h3><ul>
-<li>git rm –cached filename / -r directory</li>
-<li>git commit -m “xxx”</li>
-<li>git push</li>
-</ul>
-<h3 id="暂存代码"><a href="#暂存代码" class="headerlink" title="暂存代码"></a>暂存代码</h3><blockquote>
-<p>自己正在写新代码，突然有个500bug需要处理提交；总之就是，代码写了一半，需要暂存一下，解决如下</p>
-</blockquote>
-<h4 id="1-使用git的暂存区功能-stash"><a href="#1-使用git的暂存区功能-stash" class="headerlink" title="1. 使用git的暂存区功能 stash"></a>1. 使用git的暂存区功能 <a href="https://git-scm.com/book/zh/v1/Git-%E5%B7%A5%E5%85%B7-%E5%82%A8%E8%97%8F%EF%BC%88Stashing%EF%BC%89" target="_blank" rel="noopener">stash</a></h4><p>使用 <code>git stash</code> 指令暂存代码，将自上次commit后修改的代码全部存储在暂存区，看上去没有修改</p>
-<p>想要将修改的代码取出来可以使用 <code>git stash apply</code> (原修改的代码还在暂存区)和 <code>git stash pop</code> (原修改的代码立即从暂存区移除)将代码取出</p>
-<p>取出后继续开发代码</p>
-<h4 id="2-使用git的rebase功能"><a href="#2-使用git的rebase功能" class="headerlink" title="2. 使用git的rebase功能"></a>2. 使用git的rebase功能</h4><p>你可以就先commit代码，然后新切master分支解决bug提交，然后回来继续开发</p>
-<p>继续开发完成后commit代码，使用rebase功能将两次commit进行rebase, 合并为一个commit</p>
-<p><a href="https://www.jianshu.com/p/964de879904a" target="_blank" rel="noopener">点击参考博客</a></p>
-<h3 id="修改上一次commit-message"><a href="#修改上一次commit-message" class="headerlink" title="修改上一次commit message"></a>修改上一次commit message</h3><p><code>git commit --amend</code></p>
-<h3 id="撤销过去某次的commit"><a href="#撤销过去某次的commit" class="headerlink" title="撤销过去某次的commit"></a>撤销过去某次的commit</h3>
+        <h2 id="一-docker的主要目标"><a href="#一-docker的主要目标" class="headerlink" title="一. docker的主要目标"></a>一. docker的主要目标</h2><p>通过对应用组件的封装，分发，部署，运行等生命周期的管理，达到应用级别的一次封装，到处运行。</p>
+<h2 id="二-docker容器虚拟化的优点"><a href="#二-docker容器虚拟化的优点" class="headerlink" title="二. docker容器虚拟化的优点"></a>二. docker容器虚拟化的优点</h2><p>环境隔离<br>更快速的交付部署<br>更高效的资源利用<br>更迁移扩展<br>更简单的更新管理</p>
+<a id="more"></a>
+
+<p><code>docker build -t=&quot;vagabondize/test&quot;</code><br><code>docker rmi vagabondize/test</code><br><code>docker run --name test1 vagabondize/test</code></p>
+<h2 id="三-docker镜像"><a href="#三-docker镜像" class="headerlink" title="三. docker镜像"></a>三. docker镜像</h2><p>镜像是一个只读的模板  </p>
+<p><code>docker inspect &lt;imageID&gt;</code><br><code>docker inspect -f &amp;#123;{.Os}&amp;#125; &lt;imageID&gt;</code></p>
+<h3 id="创建镜像"><a href="#创建镜像" class="headerlink" title="创建镜像"></a>创建镜像</h3><ol>
+<li><p>基于原有容器创建新的镜像  </p>
+<p> <code>docker run -ti ubuntu bash</code></p>
+<p> <code>docker commit -a &quot;vagabondize&quot; -m &quot;message&quot; &lt;containerID&gt; vagabondize/test</code></p>
+</li>
+<li><p>迁出，载入镜像</p>
+<p> <code>docker save -o test.tar &lt;imageID&gt;</code></p>
+<p> <code>docker load --input test.tar</code></p>
+<p> <code>docker tag &lt;imageid&gt; &quot;vagabondize/test&quot;</code></p>
+<p> <code>docker push &lt;域名&gt;/&lt;namespace&gt;/&lt;repo&gt;:&lt;tag&gt;</code></p>
+</li>
+<li><p>删除镜像</p>
+<p> <code>docker rmi &lt;image_id&gt;</code></p>
+</li>
+</ol>
+<h2 id="四-docker容器"><a href="#四-docker容器" class="headerlink" title="四. docker容器"></a>四. docker容器</h2><p>容器是从镜像创建的运行实例，每个容器都是相互隔离的  </p>
+<h3 id="1-创建容器"><a href="#1-创建容器" class="headerlink" title="1. 创建容器"></a>1. 创建容器</h3><p>1) create只创建</p>
+<pre><code>`docker create --name test_create -ti ubuntu`</code></pre><p>2) run 创建并运行（create + start）</p>
+<h3 id="2-使用容器"><a href="#2-使用容器" class="headerlink" title="2. 使用容器"></a>2. 使用容器</h3><ol>
+<li><p>进入容器</p>
+<p>启动时使用bash <code>docker run -i -t ubuntu /bin/bash</code></p>
+<p>进入已启动容器的内部 <code>docker exec -i -t &lt;container_id&gt; bash</code></p>
+</li>
+<li><p>守护台运行</p>
+<p> 后台启动容器 <code>docker run -d ubuntu /bin/sh -C &quot;while true;do echo hello world; sleep 1; done&quot;</code></p>
+<p> 查看容器日志 <code>docker logs -f &lt;container_id&gt;</code></p>
+<p> 终止容器 <code>docker stop &lt;container_id&gt;</code></p>
+</li>
+<li><p>查看容器</p>
+<p> 查看终止的容器：<code>docker ps -a</code></p>
+<p> 查看运行的容器：<code>docker ps</code>  </p>
+</li>
+<li><p>删除容器</p>
+<p> <code>docker rm &lt;container_id&gt;</code></p>
+<p> <code>docker rm -f &lt;container_id&gt;</code></p>
+</li>
+<li><p>导入和导出容器</p>
+<p> <code>docker export &lt;container_id&gt; &gt; test.tar</code></p>
+<p>  <code>cat test.tar | docker import - vagabondize/hello:test</code></p>
+</li>
+</ol>
+<h2 id="五-docker仓库"><a href="#五-docker仓库" class="headerlink" title="五. docker仓库"></a>五. docker仓库</h2><ol>
+<li><p>私有仓库</p>
+<p> registry</p>
+</li>
+<li><p>管理私有仓库</p>
+<p> docker-registry-ui</p>
+</li>
+</ol>
+<h2 id="六-数据卷"><a href="#六-数据卷" class="headerlink" title="六. 数据卷"></a>六. 数据卷</h2><p> -v 标记创建一个数据卷，映射目录</p>
+<p> <code>docker run -d --name app1 -it -v ${PWD}/webapp:/root/webapp ubuntu bash</code></p>
+<p> :ro 只读   默认:rw</p>
+<p> <code>docker run -d --name atest -v /root/test -ti ubuntu bash</code></p>
+<p> <code>docker run -d --name btest --volumes-from atest -ti ubuntu bash</code></p>
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p><code>docker run -d --name dbdata -v /dbdata -ti ubuntu bash</code></p>
+<p><code>docker run --volumes-from dbdata -v ${PWD}:/backup --name worker ubuntu \ tar cvf /backup/backup.tar /dbdata</code></p>
+<p><code>docker run -d --name dbdata2 -v /dbdata -ti ubuntu bash</code></p>
+<p><code>docker run --volumes-from dbdata2 -v ${PWD}:/backup ubuntu / tar xvf /backup/bacup.tar</code></p>
+<h2 id="七-docker网络"><a href="#七-docker网络" class="headerlink" title="七. docker网络"></a>七. docker网络</h2><h2 id="centos-install"><a href="#centos-install" class="headerlink" title="centos install"></a>centos install</h2><p><code>sudo yum install net-tools</code>  </p>
+<p><code>sudo usermod -aG docker username</code></p>
+<p>配置信任仓库<br>/lib/systemd/system/docker.service  添加  –insecure-registry 192.168:5000<br><code>sudo systemctl daemon-reload</code><br><code>service docker restart</code>  </p>
+<p>添加加速器</p>
+<p>监听 netstat -nlp | grep 8080</p>
+
     </div>
 
     
@@ -282,7 +313,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aki.ink/2017/01/HelpDocument/git/" title="Git Help Document">https://aki.ink/2017/01/HelpDocument/git/</a>
+    <a href="https://aki.ink/2017/04/Help-Document/docker/" title="docker初体验">https://aki.ink/2017/04/Help-Document/docker/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -293,7 +324,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/docker/" rel="tag"># docker</a>
           </div>
 
         <div>
@@ -310,12 +341,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2016/06/HelpDocument/github/" rel="prev" title="Github初体验">
-      <i class="fa fa-chevron-left"></i> Github初体验
+    <a href="/2017/01/Help-Document/git/" rel="prev" title="Git Help Document">
+      <i class="fa fa-chevron-left"></i> Git Help Document
     </a></div>
       <div class="post-nav-item">
-    <a href="/2017/04/HelpDocument/docker/" rel="next" title="docker初体验">
-      docker初体验 <i class="fa fa-chevron-right"></i>
+    <a href="/2017/06/Reading/docker-study-xunxu/" rel="next" title="《循序渐进学Docker》读书笔记">
+      《循序渐进学Docker》读书笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -375,7 +406,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-配置"><span class="nav-text">一. 配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-基础指令"><span class="nav-text">二. 基础指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-分支操作"><span class="nav-text">三. 分支操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-其他功能"><span class="nav-text">四. 其他功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#git-stash"><span class="nav-text">git stash</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-场景模拟"><span class="nav-text">五. 场景模拟</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除远程服务器文件同时保留本地文件"><span class="nav-text">删除远程服务器文件同时保留本地文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#暂存代码"><span class="nav-text">暂存代码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-使用git的暂存区功能-stash"><span class="nav-text">1. 使用git的暂存区功能 stash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-使用git的rebase功能"><span class="nav-text">2. 使用git的rebase功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改上一次commit-message"><span class="nav-text">修改上一次commit message</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销过去某次的commit"><span class="nav-text">撤销过去某次的commit</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一-docker的主要目标"><span class="nav-text">一. docker的主要目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-docker容器虚拟化的优点"><span class="nav-text">二. docker容器虚拟化的优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-docker镜像"><span class="nav-text">三. docker镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建镜像"><span class="nav-text">创建镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四-docker容器"><span class="nav-text">四. docker容器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-创建容器"><span class="nav-text">1. 创建容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-使用容器"><span class="nav-text">2. 使用容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五-docker仓库"><span class="nav-text">五. docker仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六-数据卷"><span class="nav-text">六. 数据卷</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备份"><span class="nav-text">备份</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七-docker网络"><span class="nav-text">七. docker网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#centos-install"><span class="nav-text">centos install</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -400,7 +431,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
