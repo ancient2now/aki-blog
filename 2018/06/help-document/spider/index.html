@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"aki.ink","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅">
+  <meta name="description" content="爬虫基础scrapy-redis把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《循序渐进学Docker》读书笔记">
-<meta property="og:url" content="https://aki.ink/2017/06/Reading/docker-study-xunxu/index.html">
+<meta property="og:title" content="分布式爬虫">
+<meta property="og:url" content="https://aki.ink/2018/06/help-document/spider/index.html">
 <meta property="og:site_name" content="Aki&#39;s Blog">
-<meta property="og:description" content="看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅">
+<meta property="og:description" content="爬虫基础scrapy-redis把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2017-06-07T18:05:49.000Z">
-<meta property="article:modified_time" content="2020-07-29T15:04:37.665Z">
+<meta property="article:published_time" content="2018-06-07T18:05:49.000Z">
+<meta property="article:modified_time" content="2020-07-31T14:56:04.868Z">
 <meta property="article:author" content="Li Junqiu">
-<meta property="article:tag" content="docker">
+<meta property="article:tag" content="spider">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://aki.ink/2017/06/Reading/docker-study-xunxu/">
+<link rel="canonical" href="https://aki.ink/2018/06/help-document/spider/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>《循序渐进学Docker》读书笔记 | Aki's Blog</title>
+  <title>分布式爬虫 | Aki's Blog</title>
   
 
 
@@ -175,7 +175,7 @@ var _hmt = _hmt || [];
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://aki.ink/2017/06/Reading/docker-study-xunxu/">
+    <link itemprop="mainEntityOfPage" href="https://aki.ink/2018/06/help-document/spider/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://mbi.yume.ink/config/IMG_7638.JPG">
@@ -188,7 +188,7 @@ var _hmt = _hmt || [];
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          《循序渐进学Docker》读书笔记
+          分布式爬虫
         </h1>
 
         <div class="post-meta">
@@ -198,14 +198,14 @@ var _hmt = _hmt || [];
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2017-06-07 18:05:49" itemprop="dateCreated datePublished" datetime="2017-06-07T18:05:49+00:00">2017-06-07</time>
+              <time title="创建时间：2018-06-07 18:05:49" itemprop="dateCreated datePublished" datetime="2018-06-07T18:05:49+00:00">2018-06-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-29 15:04:37" itemprop="dateModified" datetime="2020-07-29T15:04:37+00:00">2020-07-29</time>
+                <time title="修改时间：2020-07-31 14:56:04" itemprop="dateModified" datetime="2020-07-31T14:56:04+00:00">2020-07-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -213,12 +213,11 @@ var _hmt = _hmt || [];
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Reading/" itemprop="url" rel="index"><span itemprop="name">Reading</span></a>
+                  <a href="/categories/Help-Document/" itemprop="url" rel="index"><span itemprop="name">Help Document</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">看完《循序渐进学Docker》这本书，将书中关键的docker指令记录下来，方便以后查阅</div>
 
         </div>
       </header>
@@ -229,82 +228,33 @@ var _hmt = _hmt || [];
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><ul>
-<li><p>sudo apt-get update</p>
-</li>
-<li><p>sudo apt-get intall docker.io</p>
-</li>
-<li><p>sudo service docker start</p>
-</li>
-<li><p>检查Docker安装是否成功<code>sudo docker run hello-world</code></p>
-</li>
-</ul>
-<h2 id="sudo权限"><a href="#sudo权限" class="headerlink" title="sudo权限"></a>sudo权限</h2><ul>
-<li>sudo usermod -aG docker username</li>
-</ul>
-<h2 id="搭建WordPress个人博客"><a href="#搭建WordPress个人博客" class="headerlink" title="搭建WordPress个人博客"></a>搭建WordPress个人博客</h2><ul>
-<li>docker run –name db –env MYSQL_ROOT_PASSWORD=example -d mariadb</li>
-<li>docker run –name MyWordPress –link db:mysql -p 8080:80 -d wordpress</li>
-</ul>
-<h2 id="搭建gitlab服务"><a href="#搭建gitlab服务" class="headerlink" title="搭建gitlab服务"></a>搭建gitlab服务</h2><p><strong><a href="https://github.com/sameersbn/docker-gitlab" target="_blank" rel="noopener">https://github.com/sameersbn/docker-gitlab</a></strong></p>
-<ul>
-<li><ol>
-<li>启动postgresql</li>
-</ol>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">docker run --name gitlab-postgresql -d \</span><br><span class="line">    --env <span class="string">'DB_NAME=gitlabhq_production'</span> \</span><br><span class="line">    --env <span class="string">'DB_USER=gitlab'</span> --env <span class="string">'DB_PASS=password'</span> \</span><br><span class="line">    sameersbn/postgresql:9.4-12</span><br></pre></td></tr></table></figure>
+        <h2 id="爬虫基础"><a href="#爬虫基础" class="headerlink" title="爬虫基础"></a>爬虫基础</h2><h3 id="scrapy-redis"><a href="#scrapy-redis" class="headerlink" title="scrapy-redis"></a>scrapy-redis</h3><p>把 url 存在某个地方（redis），共享给所有的机器，总的调度器来分配请求，判断 spider 有没有闲置，闲置了就继续给它任务，直到所有的 url 都爬完，这种方法解决了去重问题，也能提高性能，scrapy-redis 就实现了这样一个完整框架，总的来说，这更适合广度优先的爬取。</p>
+<a id="more"></a>
 
-<ul>
-<li><ol start="2">
-<li>启动redis<code>docker run --name gitlab-redis -d sameersbn/redis:latest</code></li>
-</ol>
-</li>
-<li><ol start="3">
-<li>启动gitlab</li>
-</ol>
-</li>
+<h3 id="Headers设置"><a href="#Headers设置" class="headerlink" title="Headers设置"></a>Headers设置</h3><ul>
+<li>User-Agent: 部分服务器或 Proxy 会通过该值来判断是否是浏览器发出的请求</li>
+<li>Content-Type: 使用 REST 接口时，服务器会检查该值，用来确定 HTTP Body 中的内容该怎样解析</li>
+<li>application/xml: 在 XMl RPC, 如 RESTful/SOAP 调用时使用</li>
+<li>application/json: 在 JSON RPC 调用时使用</li>
+<li>application/x-www-form-urlencoded: 浏览器提交 Web 表单时使用</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run --name gitlab -d \</span><br><span class="line">    --link gitlab-postgresql:postgresql --link gitlab-redis:redis.io \</span><br><span class="line">    --publish 10022:22 --publish 10080:80 \</span><br><span class="line">    --env <span class="string">'GITLAB_PORT=10080'</span> --env <span class="string">'GITLAB_SSH_PORT=10022'</span> \</span><br><span class="line">    --env <span class="string">'GITLAB_SECRETS_DB_KEY_BASE=long-and-random-alpha-numeric-string'</span> \</span><br><span class="line">        sameersbn/gitlab:8.4.4</span><br></pre></td></tr></table></figure>
-
-<h2 id="docker基础"><a href="#docker基础" class="headerlink" title="docker基础"></a>docker基础</h2><ol>
-<li><strong>查询镜像</strong> <code>docker search &lt;string&gt;</code></li>
-<li><strong>下载镜像</strong> <code>docker pull learn/turorial</code> 记得使用全名</li>
-<li><strong>创建并启动容器</strong> <code>docker run learn/turorial echo &quot;hello world&quot;</code></li>
-<li><strong>修改容器</strong> <code>docker run learn/tutorial apt-get install -y ping</code> 在非交互模式下安装软件包，要使用 -y</li>
-<li><strong>创建新镜像</strong>,使用 <code>docker ps -l</code> 找到安装过ping包的容器的ID号，然后把这个容器提交为新镜像。<br>使用 <code>docker commit &lt;ID&gt; learn/ping</code> 把容器提交为新镜像</li>
-<li><strong>使用新镜像</strong> <code>docker run learn/ping ping www.docker.com</code></li>
-<li><strong>查询容器信息</strong>，使用 <code>docker ps</code> 能够查询本机上所有正在运行的容器，使用 <code>docker inspect &lt;ID&gt;</code> 可以看到单个容器详细信息，使用容器ID的前3~4个字符来指定</li>
-<li><strong>把新镜像上传仓库</strong>，先执行 <code>docker images</code> 查看本机的镜像列表，执行 <code>docker push learn/ping</code> 把镜像推送到Docker官方仓库</li>
-</ol>
-<h2 id="Docker容器管理"><a href="#Docker容器管理" class="headerlink" title="Docker容器管理"></a>Docker容器管理</h2><h3 id="单一容器管理"><a href="#单一容器管理" class="headerlink" title="单一容器管理"></a>单一容器管理</h3><ul>
-<li>查询完整的CONTAINER ID <code>docker ps --no-trunc</code></li>
-<li>通过CONTAINER ID查询容器的状态 <code>docker ps -a | grep 0ee2433coi</code></li>
-<li>停止容器 <code>docker stop 009oljo902</code></li>
-<li>启动容器 <code>docker start 0u0ljou0j</code></li>
-<li>创建容器时，使用 –name 参数给容器起一个别名</li>
-<li>使用 <code>docker inspect -f &amp;#123;{.State.Startus}&amp;#125; MyWordPress</code> 提取信息</li>
-<li>使用 <code>docker logs</code> 查询日志</li>
-<li>Docker提供了原生的方式支持登入容器 <strong>docker exec</strong>，使用形式 <code>docker exec+容器名 + 容器执行的命令</code><br>例子：<code>docker exec MyWordPress ps aux</code><br>如果希望执行多个命令，使用 <code>docker exec -it MyWordPress /bin/bash</code> 相当于以root身份登入容器</li>
-<li>删除容器 <code>docker rm MyWordPress db</code></li>
-</ul>
-<h3 id="多容器管理"><a href="#多容器管理" class="headerlink" title="多容器管理"></a>多容器管理</h3><ul>
-<li>Docker提供一个容器编排工具——Docker Compose,根据配置模板中的“–link”等参数，对启动的优先级自动排序，执行 <code>docker-compose up</code> 就可以把同一个服务中的多个容器依次创建和启动</li>
-</ul>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">wordpress:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">wordpass</span></span><br><span class="line">    <span class="attr">links:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="string">db:mysql</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">        <span class="bullet">-</span> <span class="number">8080</span><span class="string">:80</span></span><br><span class="line"><span class="attr">db:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">mariadb</span></span><br><span class="line">    <span class="attr">enviroment:</span></span><br><span class="line">        <span class="attr">MYSQL_ROOT_PASSWORD:</span> <span class="string">example</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动 <code>docker-compose start</code></li>
-<li>停止 <code>docker-compose stop</code></li>
-</ul>
-<h2 id="Docker镜像管理"><a href="#Docker镜像管理" class="headerlink" title="Docker镜像管理"></a>Docker镜像管理</h2><h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><ul>
-<li><code>docker build -t image_redis:v1.0</code> -t用来取名字</li>
-</ul>
-<h2 id="Docker仓库管理"><a href="#Docker仓库管理" class="headerlink" title="Docker仓库管理"></a>Docker仓库管理</h2><ul>
-<li><code>docker login</code></li>
-<li><code>docker push ubuntu-baseimage:1.0</code></li>
-<li><code>docker pull centos</code></li>
-</ul>
+<h2 id="爬虫难点"><a href="#爬虫难点" class="headerlink" title="爬虫难点"></a>爬虫难点</h2><h3 id="反爬虫机制"><a href="#反爬虫机制" class="headerlink" title="反爬虫机制"></a>反爬虫机制</h3><p>A. 异常流量/高下载率 - 特别是时间内，从单一的短的客户端/或IP地址发送的请求。</p>
+<p>B. 在网站上重复执行的任务 - 基于假设是人类用户将无法一直执行相同的重复任务。</p>
+<p>C. 通过检测蜜罐 - 蜜罐通常是那些对于一个普通用户不可见，而只有爬虫可见的链接。当爬虫试图访问该链接时，警报就会触发。</p>
+<p><strong>针对这些反爬虫机制，可以通过以下策略来避开或者绕过这样的封锁:</strong></p>
+<h4 id="A-轮换IP地址"><a href="#A-轮换IP地址" class="headerlink" title="A. 轮换IP地址"></a>A. 轮换IP地址</h4><p>IP黑名单是可能的爬虫的最简单的方法。通过创建IP地址池，并使用不同的IP发出请求，将使服务器很难检测到爬虫。</p>
+<p>对策：<br>使用来自代理服务的IP列表，一定的时间间隔后随机挑选一个IP</p>
+<h4 id="B-轮换Cookie"><a href="#B-轮换Cookie" class="headerlink" title="B. 轮换Cookie"></a>B. 轮换Cookie</h4><p>Cookies是加密存储在客户端的数据，有的网站使用Cookie来标识用户。如果用户在客户端发送高频请求，有可能被认定为可疑爬虫，从而拒绝访问。</p>
+<p>对策：<br>自定义和管理cookie池<br>发送不包含cookie的请求到服务器，解析返回的包并设置cookie值; 它存储在cookie的收集器;<br>从cookie收集器中获取cookie，如果cookie不可用，则从cookie收集器中将其删除;<br>利用时间戳管理cookie收集器，这样是为了让爬虫每次首先获得的距离当前时间最远的cookie。<br>关闭Cookies<br>通过禁用cookie，可以帮助防止某些网站通过使用cookie来标识用户，从而导致爬虫被封禁。  </p>
+<h4 id="C-用户代理欺骗"><a href="#C-用户代理欺骗" class="headerlink" title="C. 用户代理欺骗"></a>C. 用户代理欺骗</h4><p>伪装成浏览器的方法之一是修改用户代理(User Agent)。用户代理是在请求Header中的字符串，它包含用户代理信息，例如网络浏览器，客户端，操作系统等的版本。</p>
+<p><strong>对策:</strong><br>通过用户代理的列表或者随机生成器，随机选择或生成对于每个请求的欺骗用户代理。设置为用户代理一个常见的网页浏览器，而不是使用默认的请求客户端。</p>
+<h4 id="D-限制速度"><a href="#D-限制速度" class="headerlink" title="D. 限制速度"></a>D. 限制速度</h4><p>降低抓取速度，善待网站，而不要让其不堪重负，或者DDoS攻击服务器。</p>
+<p>对策：<br>在每个请求之间的放入一些随机休眠时间<br>在抓取一定的网页数后，添加一些延迟<br>使用尽可能小的并发请求数目</p>
+<h4 id="E-避免重复性爬行模式"><a href="#E-避免重复性爬行模式" class="headerlink" title="E *避免重复性爬行模式"></a>E *避免重复性爬行模式</h4><p>有些网站实现智能防抓取机制，从而重复操作将有可能检测为爬虫。为了让爬虫看起来像一个人，加上随机点击，鼠标移动，随机行为等。使用自动化测试工具，如可模拟器正常的“人的行为”。</p>
+<h4 id="F-小心蜜罐"><a href="#F-小心蜜罐" class="headerlink" title="F *小心蜜罐"></a>F *小心蜜罐</h4><p>这些蜜罐（HoneyPot）通常是链接，普通用户无法看到，但爬虫则可以。他们有可能在CSS样式中显示“display: none”。因此，蜜罐的检测可能会非常棘手。</p>
+<blockquote>
+<p>以上”反反爬虫”策略也可阅读博文Anti Anti-spider Strategy</p>
+</blockquote>
 
     </div>
 
@@ -320,7 +270,7 @@ var _hmt = _hmt || [];
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://aki.ink/2017/06/Reading/docker-study-xunxu/" title="《循序渐进学Docker》读书笔记">https://aki.ink/2017/06/Reading/docker-study-xunxu/</a>
+    <a href="https://aki.ink/2018/06/help-document/spider/" title="分布式爬虫">https://aki.ink/2018/06/help-document/spider/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -331,7 +281,7 @@ var _hmt = _hmt || [];
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/docker/" rel="tag"># docker</a>
+              <a href="/tags/spider/" rel="tag"># spider</a>
           </div>
 
         <div>
@@ -348,12 +298,12 @@ var _hmt = _hmt || [];
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2017/04/Help-Document/docker/" rel="prev" title="docker初体验">
-      <i class="fa fa-chevron-left"></i> docker初体验
+    <a href="/2017/06/reading/docker-study-xunxu/" rel="prev" title="《循序渐进学Docker》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《循序渐进学Docker》读书笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/06/Help-Document/spider/" rel="next" title="分布式爬虫">
-      分布式爬虫 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/07/essay/plan-2020/" rel="next" title="2020年规划">
+      2020年规划 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -413,7 +363,7 @@ var _hmt = _hmt || [];
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#install"><span class="nav-text">install</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sudo权限"><span class="nav-text">sudo权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建WordPress个人博客"><span class="nav-text">搭建WordPress个人博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搭建gitlab服务"><span class="nav-text">搭建gitlab服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker基础"><span class="nav-text">docker基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker容器管理"><span class="nav-text">Docker容器管理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单一容器管理"><span class="nav-text">单一容器管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多容器管理"><span class="nav-text">多容器管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker镜像管理"><span class="nav-text">Docker镜像管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker仓库管理"><span class="nav-text">Docker仓库管理</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫基础"><span class="nav-text">爬虫基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scrapy-redis"><span class="nav-text">scrapy-redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Headers设置"><span class="nav-text">Headers设置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬虫难点"><span class="nav-text">爬虫难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#反爬虫机制"><span class="nav-text">反爬虫机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-轮换IP地址"><span class="nav-text">A. 轮换IP地址</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-轮换Cookie"><span class="nav-text">B. 轮换Cookie</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#C-用户代理欺骗"><span class="nav-text">C. 用户代理欺骗</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#D-限制速度"><span class="nav-text">D. 限制速度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-避免重复性爬行模式"><span class="nav-text">E *避免重复性爬行模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#F-小心蜜罐"><span class="nav-text">F *小心蜜罐</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -431,20 +381,20 @@ var _hmt = _hmt || [];
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
